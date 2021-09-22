@@ -1,5 +1,9 @@
-const {Telefone} = require('../database/models')
+const {Telefone, sequelize} = require('../database/models')
 
-Telefone.findAll().then(
-    telefones => console.log(telefones.map(u => u.toJSON()))
-)
+Telefone.create(
+    {numero: "11 9 9999 - 6667", contatos_id:2}).then(
+        tel => {
+            console.log(tel.toJSON());
+            sequelize.close()
+        }
+    )

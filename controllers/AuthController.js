@@ -1,7 +1,12 @@
+const {Usuario} = require('../database/models');
+
 module.exports = {
-    registrar: (req, res)=>{
-       console.log('registrando...');
-       return res.send('registrando...');
+    registrar: async (req, res)=>{
+      let UsuarioCriado = await Usuario.create(
+           {
+            
+           }
+       )
     },
     login: (req, res) => {
         console.log('logando...');
