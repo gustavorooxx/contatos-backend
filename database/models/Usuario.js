@@ -13,12 +13,12 @@ module.exports = (sequelize, DataType)=>{
         //     autoIncrement: true
 
         // },
+        nome: DataType.STRING,
         email: {
             type: DataType.STRING,
             allowNull: false
         },
-        senha: DataType.STRING,
-        nome: DataType.STRING
+        senha: DataType.STRING
     },
     //opções de configuração
     {
@@ -26,6 +26,10 @@ module.exports = (sequelize, DataType)=>{
         timestamps: false
 
     });
+    
+    Usuario.associate = (models) => {
+        Usuario.hasMany(models.Contato, {as: 'contatos', foreignKey:'usuarios_id'})
+    }
 
     return Usuario;
 }
