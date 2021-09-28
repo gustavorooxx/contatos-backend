@@ -27,3 +27,5 @@ module.exports = {
 // gera a estrutura do arquivo da migrate = npx sequelize migration:generate --name create_table_usuarios
 // executa a migrate = npx sequelize db:migrate
 // apaga a ultima migrate = npx sequelize db:migrate:undo
+// apaga/reverte todas as migrations = npx sequelize db:migrate:undo:all
+// npx sequelize --help para saber mais
