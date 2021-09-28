@@ -27,8 +27,22 @@ module.exports = (sequelize, DataType)=>{
 
     });
     
+    
     Usuario.associate = (models) => {
+
+        // Associando usuario com contatos (um usuario possui muitos contatos)
         Usuario.hasMany(models.Contato, {as: 'contatos', foreignKey:'usuarios_id'})
+
+        //Associando um usuário com outros usuários(amizades) (muitos para muitos)
+        Usuario.belongsToMany(models.Usuario,
+            {
+                as:'colegas', //nome do relacionamento
+                through:'amizades', //nome da tabela intermediária
+                foreignKey: 'usuarios1_id', //id do model codado na tabela intermediária
+                otherKey: 'usuarios2_id', // id do model relacionado na tabela intermediária
+                timestamps: false
+            }
+        )
     }
 
     return Usuario;

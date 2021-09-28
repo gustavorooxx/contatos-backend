@@ -14,6 +14,13 @@ module.exports = (sequelize, DataType)=>{
     }
     );
 
+    //Associoando contato com telefones (um contato tem muitos telefones)
+    Contato.associate = (models) => {
+        Contato.hasMany(models.Telefone, {as:'telefones', foreignKey:'contatos_id'})
+        //um usuario tem muitos contatos - (um contato pertence a um usuario)
+        Contato.belongsTo(models.Usuario, {as:'usuario', foreignKey:'usuarios_id'})
+    }
+
     return Contato;
 
 }
