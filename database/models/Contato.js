@@ -14,10 +14,12 @@ module.exports = (sequelize, DataType)=>{
     }
     );
 
+    //Relações:
+
     //Associoando contato com telefones (um contato tem muitos telefones)
     Contato.associate = (models) => {
         Contato.hasMany(models.Telefone, {as:'telefones', foreignKey:'contatos_id'})
-        //um usuario tem muitos contatos - (um contato pertence a um usuario)
+    //Um contato pertence a um usuario. Ao contrario do model Usuario (um usuario tem muitos contatos) 
         Contato.belongsTo(models.Usuario, {as:'usuario', foreignKey:'usuarios_id'})
     }
 
