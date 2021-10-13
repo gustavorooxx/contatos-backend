@@ -1,8 +1,9 @@
-
+const { Contato } = require('../database/models')
 
 module.exports = {
-    index: (req,res) => {
-        res.send("Aleluia!");
+    index: async (req,res) => {
+        let contatos = await Contato.findAll({where: {usuarios_id:req.usuario.id}})
+        res.send(contatos);
     }
 
 }

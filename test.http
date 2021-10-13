@@ -31,5 +31,5 @@ Content-Type: {{contentType}}
 GET /contatos HTTP/1.1
 Host: {{host}}
 Content-Type: {{contentType}}
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Niwibm9tZSI6IlBhdWxvIiwiZW1haWwiOiJwYXVsb0B0ZXN0ZS5jb20iLCJpYXQiOjE2MzM1NjI4NTV9._2HHJBhpyjQNMpOB8KyYifmlwL7wUAAIWPAqMSVYLdU 
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Niwibm9tZSI6IlBhdWxvIiwiZW1haWwiOiJwYXVsb0B0ZXN0ZS5jb20iLCJpYXQiOjE2MzQxNjg3MzR9.EJ_76zBRymcnTcQruUcvmmoReIV1O_HtlyX_VgxGVqw
 
